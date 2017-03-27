@@ -61,11 +61,11 @@ public class TypeColtAdapter extends RecyclerView.Adapter<TypeColtAdapter.TypeCo
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .crossFade()
                 .into(holder.imageView);
-       requestManager.load(collection.getColtImageURLs().get(0))
-               .asBitmap()
-               .fitCenter()
-               .override(holder.imageView.getWidth(), BitmapImageViewTarget.SIZE_ORIGINAL)
-               .into(new DriverViewTarget((ImageView) holder.itemView));
+//       requestManager.load(collection.getColtImageURLs().get(0))
+//               .asBitmap()
+//               .fitCenter()
+//               .override(holder.imageView.getWidth(), BitmapImageViewTarget.SIZE_ORIGINAL)
+//               .into(new DriverViewTarget((ImageView) holder.itemView));
 
 
         holder.textView.setText(collection.getColtName());
@@ -90,21 +90,21 @@ public class TypeColtAdapter extends RecyclerView.Adapter<TypeColtAdapter.TypeCo
 
         }
     }
-    private class DriverViewTarget extends BitmapImageViewTarget {
-
-        public DriverViewTarget(ImageView view, RecyclerView.ViewHolder) {
-            super(view);
-        }
-
-        @Override
-        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
-
-            int viewWidth = mBinding.viewImgFeed.getWidth();
-            float scale = resource.getWidth() / (viewWidth * 1.0f);
-            int viewHeight = (int) (resource.getHeight() * scale);
-            setCardViewLayoutParams(viewWidth, viewHeight);
-            super.onResourceReady(resource, glideAnimation);
-        }
-    }
+//    private class DriverViewTarget extends BitmapImageViewTarget {
+//
+//        public DriverViewTarget(ImageView view, RecyclerView.ViewHolder) {
+//            super(view);
+//        }
+//
+//        @Override
+//        public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
+//
+//            int viewWidth = mBinding.viewImgFeed.getWidth();
+//            float scale = resource.getWidth() / (viewWidth * 1.0f);
+//            int viewHeight = (int) (resource.getHeight() * scale);
+//            setCardViewLayoutParams(viewWidth, viewHeight);
+//            super.onResourceReady(resource, glideAnimation);
+//        }
+//    }
 
 }
