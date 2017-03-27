@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="jintong.museum2">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/newnew"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <!-- 通过主题设置背景图片的方式快速启动app-->
+        <activity
+            android:name=".FirstActivity"
+            android:theme="@style/FirstTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity android:name=".SetUpActivity" />
+
+        <activity android:name=".LogInActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".MuseumActivity" />
+        <activity android:name=".ExhibitionRoomActivity" />
+        <activity android:name=".ZoomImageActivity" />
+        <activity android:name=".UserInfoActivity" />
+        <activity
+            android:name=".CommentActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize">
+
+
+        </activity>
+
+        <activity
+            android:name=".TestActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity android:name=".BlogActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+
+
+    </application>
+
+</manifest>
