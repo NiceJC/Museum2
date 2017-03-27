@@ -8,20 +8,24 @@ import android.widget.ScrollView;
 
 /**
  * 屏蔽滑动事件
+ *
+ * 用于在RecyclerView外层嵌套ScrollView
+ * 直接在ScrollView层将竖直的滑动事件拦截下来，避免与内层的RecyclerView滑动冲突
+ *
  */
 public class MyScrollview extends ScrollView {
-    private int downX;
+
     private int downY;
     private int mTouchSlop;
 
     public MyScrollview(Context context) {
-        super(context);
-        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+
+        this(context,null);
     }
 
     public MyScrollview(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+        this(context,attrs,0);
+
     }
 
     public MyScrollview(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -34,7 +38,6 @@ public class MyScrollview extends ScrollView {
         int action = e.getAction();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                downX = (int) e.getRawX();
                 downY = (int) e.getRawY();
                 break;
             case MotionEvent.ACTION_MOVE:

@@ -53,8 +53,19 @@
         <activity
             android:name=".TestActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-        <activity android:name=".BlogActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+        <activity
+            android:name=".BlogActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+
+            android:name=".SearchingActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+
+        <activity android:name=".ExhibitionActivity" />
+        <activity android:name=".CollectionActivity" />
+
+
+        <activity android:name=".TypeColtActivity" />
 
 
     </application>

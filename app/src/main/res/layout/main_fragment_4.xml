@@ -3,11 +3,12 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <TextView
+        android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="热4444"
-        android:gravity="center"
-        android:textSize="30sp"
+        android:text="该功能正在开发当中..."
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
 
 
         />

@@ -34,10 +34,11 @@
 
         <ImageView
 
+            android:id="@+id/museum_fragment_search"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginRight="10dp"
-            android:padding="8dp"
+            android:padding="4dp"
             android:src="@drawable/selector_find" />
 
 
@@ -79,7 +80,7 @@
                     >
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/museum_fragment_bronze"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -88,7 +89,7 @@
                         android:src="@mipmap/type_bronze" />
 
                     <ImageView
-                        android:id="@+id/imageView4"
+                        android:id="@+id/museum_fragment_jade"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -98,7 +99,7 @@
                         android:src="@mipmap/type_jade" />
 
                     <ImageView
-                        android:id="@+id/imageView3"
+                        android:id="@+id/museum_fragment_paint"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -123,7 +124,7 @@
 
                     <ImageView
 
-                        android:id="@+id/imageView"
+                        android:id="@+id/museum_fragment_china"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -132,7 +133,7 @@
                         android:src="@mipmap/type_china" />
 
                     <ImageView
-                        android:id="@+id/imageView5"
+                        android:id="@+id/museum_fragment_lacquer"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -142,7 +143,7 @@
                         android:src="@mipmap/type_lacquer" />
 
                     <ImageView
-                        android:id="@+id/imageView6"
+                        android:id="@+id/museum_fragment_others"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="5dp"
@@ -157,34 +158,30 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@color/tab_bg_color"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp">
+                android:paddingLeft="5dp"
+                android:paddingTop="5dp"
+              >
 
-                <ImageView
-
-
-                    android:layout_width="8dp"
-                    android:layout_height="13dp"
-                    android:background="@mipmap/thenext" />
 
                 <TextView
+                    android:textSize="16sp"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:paddingLeft="3dp"
-                    android:text="展品推荐" />
+                    android:text="大家都爱看" />
 
             </LinearLayout>
 
             <android.support.v7.widget.RecyclerView
 
 
-                android:paddingTop="10dp"
+
                 android:id="@+id/colt_recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -1,7 +1,6 @@
 package jintong.museum2;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,19 +9,15 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import MyView.GlideCircleTransform;
-import adapter.ExhibitRoomAdapter;
-import adapter.MuseumListAdapter;
+import adapter.ExhibitRoomListAdapter;
 import entity.ExhibitRoom;
 import entity.Museum;
 import interfaces.OnItemClickListener;
@@ -101,7 +96,7 @@ public class MuseumActivity extends BaseActivity implements View.OnClickListener
         time.setText(museum.getOpening_time());
         cost.setText(museum.getCost());
 
-        ExhibitRoomAdapter adapter = new ExhibitRoomAdapter(this, rooms);
+        ExhibitRoomListAdapter adapter = new ExhibitRoomListAdapter(this, rooms);
 
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override

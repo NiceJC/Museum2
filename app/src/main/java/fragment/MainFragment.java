@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jintong.museum2.R;
+import jintong.museum2.SearchingActivity;
 import jintong.museum2.TestActivity;
 
 /**
@@ -52,7 +53,7 @@ public class MainFragment extends Fragment {
             mSearch.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent=new Intent(getActivity(), TestActivity.class);
+                    Intent intent=new Intent(getActivity(), SearchingActivity.class);
                     startActivity(intent);
 
                 }

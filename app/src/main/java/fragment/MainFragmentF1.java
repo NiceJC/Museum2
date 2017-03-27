@@ -18,11 +18,11 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import adapter.ExhibitionRecyclerAdapter;
+import adapter.ExhibitionListRecyclerAdapter;
 import entity.Exhibition;
 import interfaces.OnItemClickListener;
+import jintong.museum2.ExhibitionActivity;
 import jintong.museum2.R;
-import jintong.museum2.ZoomImageActivity;
 
 /**
  * 热门展览
@@ -44,7 +44,7 @@ public class MainFragmentF1 extends Fragment implements SwipeRefreshLayout.OnRef
 
     private int lastVisibleItem;
 
-    private ExhibitionRecyclerAdapter adapter;
+    private ExhibitionListRecyclerAdapter adapter;
 
     private boolean isLoadingMore = false;
     private boolean noMoreToLoad = false;
@@ -61,7 +61,7 @@ public class MainFragmentF1 extends Fragment implements SwipeRefreshLayout.OnRef
         initEvents();
 
 
-        adapter = new ExhibitionRecyclerAdapter(getContext(), datas);
+        adapter = new ExhibitionListRecyclerAdapter(getContext(), datas);
 
         recyclerView.setAdapter(adapter);
         manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
@@ -82,7 +82,7 @@ public class MainFragmentF1 extends Fragment implements SwipeRefreshLayout.OnRef
                 }
 
                 if (newState == RecyclerView.SCROLL_STATE_IDLE && lastVisibleItem + 1 == adapter.getItemCount()) {
-                    adapter.changeMoreStatus(ExhibitionRecyclerAdapter.LOADING_MORE);
+                    adapter.changeMoreStatus(ExhibitionListRecyclerAdapter.LOADING_MORE);
                     isLoadingMore = true;
                     new Handler().postDelayed(new Runnable() {
                         @Override
@@ -101,12 +101,12 @@ public class MainFragmentF1 extends Fragment implements SwipeRefreshLayout.OnRef
                                 exhibitions.add(exhibition);
                             }
                             if (exhibitions.size() < 6) {
-                                adapter.addMoreItem(exhibitions, ExhibitionRecyclerAdapter.NO_MORE_TO_LOAD);
+                                adapter.addMoreItem(exhibitions, ExhibitionListRecyclerAdapter.NO_MORE_TO_LOAD);
 
                                 noMoreToLoad = true;
 
                             } else {
-                                adapter.addMoreItem(exhibitions, ExhibitionRecyclerAdapter.PULLUP_LOAD_MORE);
+                                adapter.addMoreItem(exhibitions, ExhibitionListRecyclerAdapter.PULLUP_LOAD_MORE);
                             }
 
                             isLoadingMore = false;
@@ -162,9 +162,9 @@ public class MainFragmentF1 extends Fragment implements SwipeRefreshLayout.OnRef
         adapter.setmOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Intent intent = new Intent(getActivity(), ZoomImageActivity.class);
+                Intent intent = new Intent(getActivity(), ExhibitionActivity.class);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.in_zoom, R.anim.none);
+                getActivity().overridePendingTransition(R.anim.in_from_right, R.anim.none);
 
             }
 
@@ -238,7 +238,7 @@ public class MainFragmentF1 extends Fragment implements SwipeRefreshLayout.OnRef
 
                     exhibitions.add(exhibition);
                 }
-                adapter.refreshItem(exhibitions,ExhibitionRecyclerAdapter.PULLUP_LOAD_MORE);
+                adapter.refreshItem(exhibitions, ExhibitionListRecyclerAdapter.PULLUP_LOAD_MORE);
 
                 swipeRefreshLayout.setRefreshing(false);
                 noMoreToLoad=false;
